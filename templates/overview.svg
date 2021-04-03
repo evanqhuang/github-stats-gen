@@ -9,7 +9,7 @@ svg {
 #background {
   width: calc(100% - 10px);
   height: calc(100% - 10px);
-  fill: %3a3a3a;
+  fill: #3a3a3a;
   stroke: rgb(225, 228, 232);
   stroke-width: 1px;
   rx: 6px;
@@ -33,7 +33,7 @@ th {
   text-align: left;
   font-size: 14px;
   font-weight: 600;
-  color: %8d2dc2;
+  color: #8d2dc2;
 }
 
 td {
@@ -42,7 +42,7 @@ td {
   padding: 0.25em;
   font-size: 12px;
   line-height: 18px;
-  color: %a3c5ec;
+  color: #a3c5ec;
 }
 
 tr {
