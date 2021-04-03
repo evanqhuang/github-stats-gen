@@ -25,10 +25,10 @@ h2 {
   margin-top: 0;
   margin-bottom: 0.75em;
   line-height: 24px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  color: #caa2fa;
-  fill: #caa2fa;
+  color: #c791f2;
+  fill: #c791f2;
 }
 
 ul {
