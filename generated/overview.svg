@@ -12,8 +12,8 @@ svg {
   stroke: #3a3a3a;
   stroke-width: 0px;
   fill: #3a3a3a;
-  rx: 6px;
-  ry: 6px;
+  rx: 0px;
+  ry: 0px;
 }
 
 foreignObject {
