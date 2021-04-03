@@ -21,6 +21,10 @@ foreignObject {
   height: calc(100% - 10px - 32px);
 }
 
+table, tr, td {
+  border: none;
+}
+  
 table {
   width: 100%;
   border-collapse: collapse;
@@ -28,6 +32,8 @@ table {
 }
 
 th {
+  visibility: hidden;
+  display: none;
   padding: 0.5em;
   padding-top: 0;
   text-align: left;
