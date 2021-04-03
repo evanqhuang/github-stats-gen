@@ -31,9 +31,9 @@ th {
   padding: 0.5em;
   padding-top: 0;
   text-align: left;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
-  color: #caa2fa;
+  color: #c791f2;
 }
 
 td {
@@ -54,7 +54,7 @@ tr {
 }
 
 .octicon {
-  fill: #e6eefa;
+  fill: white;
   margin-right: 1ch;
   vertical-align: top;
 }
