@@ -33,7 +33,7 @@ th {
   text-align: left;
   font-size: 14px;
   font-weight: 600;
-  color: #bfa5f2;
+  color: #caa2fa;
 }
 
 td {
@@ -42,7 +42,7 @@ td {
   padding: 0.25em;
   font-size: 12px;
   line-height: 18px;
-  color: #a6accd;
+  color: #e6eefa;
 }
 
 tr {
