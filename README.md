@@ -4,6 +4,7 @@
 
 ![](https://github.com/evanhuang117/github-stats/blob/master/generated/languages.svg)
 ![](https://github.com/evanhuang117/github-stats/blob/master/generated/overview.svg)
+![](https://github.com/evanhuang117/github-stats/blob/master/generated/linkedin-banner.jpg)
 
 </a>
 
