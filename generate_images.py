@@ -71,7 +71,7 @@ async def generate_linkedin(s: Stats) -> None:
         f.write(output)
 
     hti = Html2Image(output_path='generated')
-    hti.screenshot(other_file='generated/linkedin-banner.svg', save_as='linkedin-banner.jpg')
+    hti.screenshot(other_file='generated/linkedin-banner.svg', save_as='linkedin-banner.jpg', size=(1584, 396))
 
 
 async def generate_languages(s: Stats) -> None:
