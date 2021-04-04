@@ -70,9 +70,6 @@ async def generate_linkedin(s: Stats) -> None:
     with open("generated/linkedin-banner.svg", "w") as f:
         f.write(output)
 
-    hti = Html2Image(output_path='generated')
-    hti.screenshot(other_file='generated/linkedin-banner.svg', save_as='linkedin-banner.jpg', size=(1584, 396))
-
 
 async def generate_languages(s: Stats) -> None:
     """
@@ -140,6 +137,10 @@ async def main() -> None:
                   exclude_langs=exclude_langs,
                   ignore_forked_repos=ignore_forked_repos)
         await asyncio.gather(generate_languages(s), generate_overview(s), generate_linkedin(s))
+    
+    hti = Html2Image(output_path='generated')
+    hti.screenshot(other_file='generated/linkedin-banner.svg', save_as='linkedin-banner.jpg', size=(1584, 396))
+
 
 if __name__ == "__main__":
     asyncio.run(main())
