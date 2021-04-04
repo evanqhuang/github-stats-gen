@@ -72,7 +72,7 @@ async def generate_linkedin(s: Stats) -> None:
     with open("generated/linkedin-banner.svg", "w") as f:
         f.write(output)
 
-    with pyvips.Image.new_from_file("generated/linked-banner.svg", dpi=300) as img:
+    with pyvips.Image.new_from_file("generated/linkedin-banner.svg", dpi=300) as img:
         img.write_to_file("generated/linkedin-banner.png")
 
 
