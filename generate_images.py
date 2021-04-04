@@ -5,6 +5,7 @@ import os
 import re
 
 import aiohttp
+import pyvips
 
 from github_stats import Stats
 
@@ -46,6 +47,33 @@ async def generate_overview(s: Stats) -> None:
     generate_output_folder()
     with open("generated/overview.svg", "w") as f:
         f.write(output)
+
+# Generate svg and png to make a nice looking linkedin banner
+
+async def generate_linkedin(s: Stats) -> None:
+    """
+    Generate an SVG badge with summary statistics
+    :param s: Represents user's GitHub statistics
+    """
+    with open("templates/linkedin-banner.svg", "r") as f:
+        output = f.read()
+
+    output = re.sub("{{ name }}", await s.name, output)
+    output = re.sub("{{ stars }}", f"{await s.stargazers:,}", output)
+    output = re.sub("{{ forks }}", f"{await s.forks:,}", output)
+    output = re.sub("{{ contributions }}", f"{await s.total_contributions:,}",
+                    output)
+    changed = (await s.lines_changed)[0] + (await s.lines_changed)[1]
+    output = re.sub("{{ lines_changed }}", f"{changed:,}", output)
+    output = re.sub("{{ views }}", f"{await s.views:,}", output)
+    output = re.sub("{{ repos }}", f"{len(await s.repos):,}", output)
+
+    generate_output_folder()
+    with open("generated/linkedin-banner.svg", "w") as f:
+        f.write(output)
+
+    with pyvips.Image.new_from_file("generated/linked-banner.svg", dpi=300) as img:
+        img.write_to_file("generated/linkedin-banner.png")
 
 
 async def generate_languages(s: Stats) -> None:
@@ -113,7 +141,7 @@ async def main() -> None:
         s = Stats(user, access_token, session, exclude_repos=exclude_repos,
                   exclude_langs=exclude_langs,
                   ignore_forked_repos=ignore_forked_repos)
-        await asyncio.gather(generate_languages(s), generate_overview(s))
+        await asyncio.gather(generate_languages(s), generate_overview(s), generate_linkedin(s))
 
 if __name__ == "__main__":
     asyncio.run(main())
