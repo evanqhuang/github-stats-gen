@@ -5,7 +5,6 @@ import os
 import re
 
 import aiohttp
-import pyvips
 
 from github_stats import Stats
 
@@ -71,9 +70,6 @@ async def generate_linkedin(s: Stats) -> None:
     generate_output_folder()
     with open("generated/linkedin-banner.svg", "w") as f:
         f.write(output)
-
-    with pyvips.Image.new_from_file("generated/linkedin-banner.svg", dpi=300) as img:
-        img.write_to_file("generated/linkedin-banner.png")
 
 
 async def generate_languages(s: Stats) -> None:
